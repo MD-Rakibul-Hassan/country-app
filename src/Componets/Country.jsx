@@ -1,5 +1,7 @@
 import { useState } from "react";
-function Country({ countrys }) {
+
+
+function Country({ countrys, handleVisitedCountrys }) {
     const [visit, setVisit] = useState(false);
     const handleVisit = () => setVisit(!visit)
     const { name,flags} = countrys;
@@ -11,6 +13,7 @@ function Country({ countrys }) {
             {
                 visit ? <p>I have already visit this country</p> : <p>I am excited to visit this country</p>
             }
+            <button onClick={() => handleVisitedCountrys(countrys)} className="bg-orange-500 px-4 py-2 my-3 rounded-xl">Mark as visit</button>
         </div>
     )
 }
